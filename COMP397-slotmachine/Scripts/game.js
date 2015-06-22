@@ -70,6 +70,8 @@ var mybetMaxLabel;
 var mybetOneLabel;
 var myBetTenLabel;
 var myplayerMoneyLabel;
+var lablewin;
+var lablelose;
 //tally variable
 var jackpot = 5000;
 var playerMoney = 1000;
@@ -247,6 +249,10 @@ function determineWinnings() {
 function showLossMessage() {
     playerMoney -= playerBet;
     //$("div#winOrLose>p").text("You Lost!");
+    stage.removeChild(lablelose);
+    stage.removeChild(lablewin);
+    lablelose = new objects.Label(playerBet.toString(), 250, 298, false);
+    stage.addChild(lablelose);
     stage.removeChild(winMsgLabel);
     stage.removeChild(loseMsgLabel);
     loseMsgLabel = new objects.Label("OOPS..YOU LOSE", 85, 60, false);
@@ -257,6 +263,10 @@ function showLossMessage() {
 function showWinMessage() {
     playerMoney += winnings;
     //$("div#winOrLose>p").text("You Won: $" + winnings);
+    stage.removeChild(lablelose);
+    stage.removeChild(lablewin);
+    lablewin = new objects.Label(winnings.toString(), 250, 298, false);
+    stage.addChild(lablewin);
     console.log("WINNER");
     stage.removeChild(loseMsgLabel);
     stage.removeChild(winMsgLabel);
