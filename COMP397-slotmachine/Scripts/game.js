@@ -12,6 +12,7 @@ var stage;
 var stats;
 var tiles = [];
 var reelContainers = [];
+var pButton;
 //Game constants
 var NUM_REELS = 3;
 var assets;
@@ -34,7 +35,8 @@ var atlas = {
         [134, 68, 64, 64],
         [134, 134, 49, 49],
         [68, 134, 64, 64],
-        [185, 155, 49, 49]
+        [185, 155, 49, 49],
+        [2, 206, 40, 40]
     ],
     "animations": {
         "bananaSymbol": [0],
@@ -49,7 +51,8 @@ var atlas = {
         "orangeSymbol": [9],
         "resetButton": [10],
         "sevenSymbol": [11],
-        "spinButton": [12]
+        "spinButton": [12],
+        "powerButton": [13]
     }
 };
 // Game Variables
@@ -76,6 +79,8 @@ var oranges = 0;
 var cherries = 0;
 var shells = 0;
 var diamonds = 0;
+var bells = 0;
+var bars = 0;
 var grapes = 0;
 var cherries = 0;
 var blanks = 0;
@@ -197,10 +202,10 @@ function determineWinnings() {
         else if (shells == 3) {
             winnings = playerBet * 50;
         }
-        else if (grapes == 3) {
+        else if (sevens == 3) {
             winnings = playerBet * 75;
         }
-        else if (cherries == 3) {
+        else if (bells == 3) {
             winnings = playerBet * 100;
         }
         else if (grapes == 2) {
@@ -218,13 +223,13 @@ function determineWinnings() {
         else if (shells == 2) {
             winnings = playerBet * 5;
         }
-        else if (grapes == 2) {
+        else if (bells == 2) {
             winnings = playerBet * 10;
         }
         else if (cherries == 2) {
             winnings = playerBet * 20;
         }
-        else if (cherries == 1) {
+        else if (grapes == 1) {
             winnings = playerBet * 5;
         }
         else {
@@ -244,7 +249,7 @@ function showLossMessage() {
     //$("div#winOrLose>p").text("You Lost!");
     stage.removeChild(winMsgLabel);
     stage.removeChild(loseMsgLabel);
-    loseMsgLabel = new objects.Label("OOPS....YOU LOSE", 90, 60, false);
+    loseMsgLabel = new objects.Label("OOPS..YOU LOSE", 85, 60, false);
     stage.addChild(loseMsgLabel);
     resetFruitTally();
 }
@@ -255,7 +260,7 @@ function showWinMessage() {
     console.log("WINNER");
     stage.removeChild(loseMsgLabel);
     stage.removeChild(winMsgLabel);
-    winMsgLabel = new objects.Label("BRAVO!!YOU WIN JACKPOT", 39, 60, false);
+    winMsgLabel = new objects.Label("BRAVO!!YOU WIN ", 80, 60, false);
     stage.addChild(winMsgLabel);
     resetFruitTally();
     checkJackPot();
@@ -352,6 +357,9 @@ function betMaxButtonClicked(event) {
     mybetMaxLabel = new objects.Label("$" + playerMoney.toString(), 140, 298, false);
     stage.addChild(mybetMaxLabel);
 }
+function pButtonClicked(event) {
+    window.close();
+}
 /* Utility function to show Player Stats */
 function showPlayerStats() {
     winRatio = winNumber / turn;
@@ -425,5 +433,8 @@ function createUI() {
     myBetTenButton = new objects.Button("betTenButton", 194, 330, false);
     stage.addChild(myBetTenButton);
     myBetTenButton.on("click", betTenButtonClicked, this);
+    pButton = new objects.Button("powerButton", 250, 40, false);
+    stage.addChild(pButton);
+    pButton.on("click", pButtonClicked, this);
 }
 //# sourceMappingURL=game.js.map

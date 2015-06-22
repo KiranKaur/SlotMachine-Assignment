@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\backgroundimage.jpg" />
     <Content Include="assets\images\barjackpot.png" />
     <Content Include="assets\images\belljackpot.png" />
     <Content Include="assets\images\blankSymbol.png" />

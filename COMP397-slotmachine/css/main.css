@@ -1,6 +1,7 @@
 ﻿body {
-    background-image:url("assets/images/texture.jpg");
+    background-image:url("/assets/images/backgroundimage.jpg");
     background-repeat:no-repeat;
+    background-size:cover;
 }
 
 canvas {
