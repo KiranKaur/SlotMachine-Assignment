@@ -59,12 +59,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\barjackpot.png" />
+    <Content Include="assets\images\belljackpot.png" />
+    <Content Include="assets\images\cherryjackpot.png" />
+    <Content Include="assets\images\diamondjackpot.png" />
+    <Content Include="assets\images\grapesjackpot.png" />
+    <Content Include="assets\images\jackpotseven.png" />
     <Content Include="assets\images\myatlas.png" />
     <Content Include="assets\images\mybetmaxbutton.png" />
     <Content Include="assets\images\mybetonebutton.png" />
     <Content Include="assets\images\mybettenbutton.png" />
     <Content Include="assets\images\myresertbutton.png" />
     <Content Include="assets\images\myspinbutton.png" />
+    <Content Include="assets\images\shelljackpot.png" />
     <Content Include="assets\images\slotMachine.png" />
     <Content Include="config\constants.js" />
     <Content Include="objects\button.js" />
