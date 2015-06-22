@@ -1,4 +1,6 @@
 ﻿body {
+    background-image:url("assets/images/texture.jpg");
+    background-repeat:no-repeat;
 }
 
 canvas {

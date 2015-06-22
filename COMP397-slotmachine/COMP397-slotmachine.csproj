@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="assets\images\barjackpot.png" />
     <Content Include="assets\images\belljackpot.png" />
+    <Content Include="assets\images\blankSymbol.png" />
     <Content Include="assets\images\cherryjackpot.png" />
     <Content Include="assets\images\diamondjackpot.png" />
     <Content Include="assets\images\grapesjackpot.png" />
@@ -73,6 +74,7 @@
     <Content Include="assets\images\myspinbutton.png" />
     <Content Include="assets\images\shelljackpot.png" />
     <Content Include="assets\images\slotMachine.png" />
+    <Content Include="assets\images\texture.jpg" />
     <Content Include="config\constants.js" />
     <Content Include="objects\button.js" />
     <Content Include="objects\label.js" />

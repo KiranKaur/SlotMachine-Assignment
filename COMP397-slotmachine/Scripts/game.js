@@ -71,13 +71,15 @@ var myplayerMoneyLabel;
 var jackpot = 5000;
 var playerMoney = 1000;
 var grapes = 0;
-var bananas = 0;
+//var bananas = 0;
 var oranges = 0;
 var cherries = 0;
-var bars = 0;
-var bells = 0;
-var sevens = 0;
+var shells = 0;
+var diamonds = 0;
+var grapes = 0;
+var cherries = 0;
 var blanks = 0;
+var sevens = 0;
 var winnings = 0;
 var turn = 0;
 var playerBet = 0;
@@ -142,36 +144,36 @@ function Reels() {
         outCome[spin] = Math.floor((Math.random() * 65) + 1);
         switch (outCome[spin]) {
             case checkRange(outCome[spin], 1, 27):
-                betLine[spin] = "blankSym";
+                betLine[spin] = "blanksymbol";
                 blanks++;
                 break;
             case checkRange(outCome[spin], 28, 37):
                 betLine[spin] = "barjackpot";
-                grapes++;
+                shells++;
                 break;
             case checkRange(outCome[spin], 38, 46):
                 betLine[spin] = "belljackpot";
-                bananas++;
+                grapes++;
                 break;
             case checkRange(outCome[spin], 47, 54):
                 betLine[spin] = "diamondjackpot";
-                oranges++;
+                diamonds++;
                 break;
             case checkRange(outCome[spin], 55, 59):
                 betLine[spin] = "jackpotseven";
-                cherries++;
+                sevens++;
                 break;
             case checkRange(outCome[spin], 60, 62):
                 betLine[spin] = "shelljackpot";
-                bars++;
+                shells++;
                 break;
             case checkRange(outCome[spin], 63, 64):
                 betLine[spin] = "grapesjackpot";
-                bells++;
+                grapes++;
                 break;
             case checkRange(outCome[spin], 65, 65):
                 betLine[spin] = "cherryjackpot";
-                sevens++;
+                cherries++;
                 break;
         }
     }
@@ -183,46 +185,46 @@ function determineWinnings() {
         if (grapes == 3) {
             winnings = playerBet * 10;
         }
-        else if (bananas == 3) {
+        else if (diamonds == 3) {
             winnings = playerBet * 20;
         }
-        else if (oranges == 3) {
+        else if (sevens == 3) {
             winnings = playerBet * 30;
         }
         else if (cherries == 3) {
             winnings = playerBet * 40;
         }
-        else if (bars == 3) {
+        else if (shells == 3) {
             winnings = playerBet * 50;
         }
-        else if (bells == 3) {
+        else if (grapes == 3) {
             winnings = playerBet * 75;
         }
-        else if (sevens == 3) {
+        else if (cherries == 3) {
             winnings = playerBet * 100;
         }
         else if (grapes == 2) {
             winnings = playerBet * 2;
         }
-        else if (bananas == 2) {
+        else if (diamonds == 2) {
             winnings = playerBet * 2;
         }
-        else if (oranges == 2) {
+        else if (sevens == 2) {
             winnings = playerBet * 3;
         }
         else if (cherries == 2) {
             winnings = playerBet * 4;
         }
-        else if (bars == 2) {
+        else if (shells == 2) {
             winnings = playerBet * 5;
         }
-        else if (bells == 2) {
+        else if (grapes == 2) {
             winnings = playerBet * 10;
         }
-        else if (sevens == 2) {
+        else if (cherries == 2) {
             winnings = playerBet * 20;
         }
-        else if (sevens == 1) {
+        else if (cherries == 1) {
             winnings = playerBet * 5;
         }
         else {
@@ -250,7 +252,7 @@ function showLossMessage() {
 function showWinMessage() {
     playerMoney += winnings;
     //$("div#winOrLose>p").text("You Won: $" + winnings);
-    console.log("you won");
+    console.log("WINNER");
     stage.removeChild(loseMsgLabel);
     stage.removeChild(winMsgLabel);
     winMsgLabel = new objects.Label("BRAVO!!YOU WIN JACKPOT", 39, 60, false);
@@ -369,12 +371,13 @@ function showPlayerStats() {
 /* Utility function to reset all fruit tallies */
 function resetFruitTally() {
     grapes = 0;
-    bananas = 0;
-    oranges = 0;
-    cherries = 0;
-    bars = 0;
-    bells = 0;
+    //bananas = 0;
+    diamonds = 0;
     sevens = 0;
+    cherries = 0;
+    shells = 0;
+    grapes = 0;
+    cherries = 0;
     blanks = 0;
 }
 /* Utility function to reset the player stats */
